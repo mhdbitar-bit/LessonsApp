@@ -8,7 +8,7 @@
 import Foundation
 
 protocol LessonCache {
-    func save(_ lessons: [Lesson]) throws
+    func save(_ lesson: Lesson) throws
 }
 
 final class LocalLessonLoader {
@@ -20,9 +20,9 @@ final class LocalLessonLoader {
 }
 
 extension LocalLessonLoader: LessonCache {
-    func save(_ lessons: [Lesson]) throws {
+    func save(_ lesson: Lesson) throws {
         try store.deleteCachedLessons()
-        try store.insert(lessons)
+        try store.insert(lesson)
     }
 }
 

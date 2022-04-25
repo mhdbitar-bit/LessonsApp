@@ -9,6 +9,6 @@ import Foundation
 
 protocol LessonStore {
     func deleteCachedLessons() throws
-    func insert(_ lessons: [Lesson]) throws
+    func insert(_ lesson: Lesson) throws
     func retrieve() throws -> [Lesson]
 }
