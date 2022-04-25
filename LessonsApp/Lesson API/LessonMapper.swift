@@ -29,4 +29,12 @@ final class LessonMapper {
             )}
         }
     }
+    
+    static func map(_ data: Data, from response: HTTPURLResponse) throws -> [Lesson] {
+        guard response.statusCode == 200, let lessons = try? JSONDecoder().decode(LessonResponse.self, from: data) else {
+            throw NetworkError.invalidData
+        }
+        
+        return lessons.items
+    }
 }
