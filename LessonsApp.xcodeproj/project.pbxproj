@@ -13,6 +13,8 @@
 		4C7599BD281702C900957666 /* LessonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7599BC281702C900957666 /* LessonService.swift */; };
 		4C7599BF2817040600957666 /* LessonMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7599BE2817040600957666 /* LessonMapper.swift */; };
 		4C7599C6281713F000957666 /* LessonStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C7599C4281713F000957666 /* LessonStore.xcdatamodeld */; };
+		4C7599CA2817165700957666 /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7599C92817165700957666 /* CoreDataHelpers.swift */; };
+		4C7599CC2817177B00957666 /* CoreDataLessonStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7599CB2817177B00957666 /* CoreDataLessonStore.swift */; };
 		4CEA92892816FE990058BB84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA92882816FE990058BB84 /* AppDelegate.swift */; };
 		4CEA928B2816FE990058BB84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA928A2816FE990058BB84 /* SceneDelegate.swift */; };
 		4CEA92902816FE990058BB84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA928E2816FE990058BB84 /* Main.storyboard */; };
@@ -47,6 +49,8 @@
 		4C7599BC281702C900957666 /* LessonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonService.swift; sourceTree = "<group>"; };
 		4C7599BE2817040600957666 /* LessonMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonMapper.swift; sourceTree = "<group>"; };
 		4C7599C5281713F000957666 /* LessonStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LessonStore.xcdatamodel; sourceTree = "<group>"; };
+		4C7599C92817165700957666 /* CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
+		4C7599CB2817177B00957666 /* CoreDataLessonStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataLessonStore.swift; sourceTree = "<group>"; };
 		4CEA92852816FE990058BB84 /* LessonsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LessonsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CEA92882816FE990058BB84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CEA928A2816FE990058BB84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,12 +116,30 @@
 			path = "Lesson API";
 			sourceTree = "<group>";
 		};
-		4C7599C3281713D100957666 /* Cache */ = {
+		4C7599C3281713D100957666 /* Lesson Cache */ = {
+			isa = PBXGroup;
+			children = (
+				4C7599C82817162600957666 /* Infrastructure */,
+			);
+			path = "Lesson Cache";
+			sourceTree = "<group>";
+		};
+		4C7599C72817161800957666 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
 				4C7599C4281713F000957666 /* LessonStore.xcdatamodeld */,
+				4C7599C92817165700957666 /* CoreDataHelpers.swift */,
+				4C7599CB2817177B00957666 /* CoreDataLessonStore.swift */,
 			);
-			path = Cache;
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		4C7599C82817162600957666 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				4C7599C72817161800957666 /* CoreData */,
+			);
+			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 		4CEA927C2816FE990058BB84 = {
@@ -143,7 +165,7 @@
 		4CEA92872816FE990058BB84 /* LessonsApp */ = {
 			isa = PBXGroup;
 			children = (
-				4C7599C3281713D100957666 /* Cache */,
+				4C7599C3281713D100957666 /* Lesson Cache */,
 				4C7599B62817009E00957666 /* API Infrastructure */,
 				4C7599B92817022900957666 /* Lesson API */,
 				4C7599B32816FFAA00957666 /* Domain */,
@@ -309,8 +331,10 @@
 				4C7599C6281713F000957666 /* LessonStore.xcdatamodeld in Sources */,
 				4CEA928B2816FE990058BB84 /* SceneDelegate.swift in Sources */,
 				4C7599B52816FFD600957666 /* Lesson.swift in Sources */,
+				4C7599CC2817177B00957666 /* CoreDataLessonStore.swift in Sources */,
 				4C7599BF2817040600957666 /* LessonMapper.swift in Sources */,
 				4C7599BD281702C900957666 /* LessonService.swift in Sources */,
+				4C7599CA2817165700957666 /* CoreDataHelpers.swift in Sources */,
 				4C7599BB2817024000957666 /* LessonEndpoint.swift in Sources */,
 				4C7599B8281700C400957666 /* URLSessionHTTPClient.swift in Sources */,
 			);
