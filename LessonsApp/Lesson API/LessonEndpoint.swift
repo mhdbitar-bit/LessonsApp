@@ -18,7 +18,7 @@ enum LessonEndpoint {
             components.host = baseURL.host
             components.path = baseURL.path + "test-api/lessons"
             components.queryItems = []
-            return components
+            return components.url!
         }
     }
 }
