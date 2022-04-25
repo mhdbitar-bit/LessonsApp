@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum NetworkError: Error {
+    case connectivity
+    case invalidData
+}
+
 protocol LessonService {
     typealias Result = Swift.Result<[Lesson], Error>
     
@@ -19,11 +24,6 @@ final class RemoteLessonsService: LessonService {
     private let url: URL
     private let client: HTTPClient
     
-    enum Error: Swift.Error {
-        case connectivity
-        case invalidData
-    }
-    
     init(url: URL, client: HTTPClient) {
         self.url = url
         self.client = client
@@ -35,7 +35,7 @@ final class RemoteLessonsService: LessonService {
             case .success(let (data, response)):
                 break
             case .failure:
-                completion(.failure(Error.connectivity))
+                completion(.failure(NetworkError.connectivity))
             }
         }
     }
