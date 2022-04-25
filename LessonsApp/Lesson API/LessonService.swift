@@ -33,10 +33,19 @@ final class RemoteLessonsService: LessonService {
         client.get(from: url) { result in
             switch result {
             case .success(let (data, response)):
-                break
+                completion(RemoteLessonsService.map(data, from: response))
             case .failure:
                 completion(.failure(NetworkError.connectivity))
             }
+        }
+    }
+    
+    private static func map(_ data: Data, from response: HTTPURLResponse) -> Result {
+        do {
+            let lessons = try LessonMapper.map(data, from: response)
+            return .success(lessons)
+        } catch {
+            return .failure(error)
         }
     }
 }
