@@ -16,6 +16,8 @@
 		4C7599CA2817165700957666 /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7599C92817165700957666 /* CoreDataHelpers.swift */; };
 		4C7599CC2817177B00957666 /* CoreDataLessonStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7599CB2817177B00957666 /* CoreDataLessonStore.swift */; };
 		4C7599CE281719AF00957666 /* ManagedLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7599CD281719AF00957666 /* ManagedLesson.swift */; };
+		4C7599D0281721B700957666 /* LocalLessonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7599CF281721B700957666 /* LocalLessonLoader.swift */; };
+		4C7599D2281721DB00957666 /* LessonStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7599D1281721DB00957666 /* LessonStore.swift */; };
 		4CEA92892816FE990058BB84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA92882816FE990058BB84 /* AppDelegate.swift */; };
 		4CEA928B2816FE990058BB84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA928A2816FE990058BB84 /* SceneDelegate.swift */; };
 		4CEA92902816FE990058BB84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA928E2816FE990058BB84 /* Main.storyboard */; };
@@ -53,6 +55,8 @@
 		4C7599C92817165700957666 /* CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
 		4C7599CB2817177B00957666 /* CoreDataLessonStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataLessonStore.swift; sourceTree = "<group>"; };
 		4C7599CD281719AF00957666 /* ManagedLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedLesson.swift; sourceTree = "<group>"; };
+		4C7599CF281721B700957666 /* LocalLessonLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLessonLoader.swift; sourceTree = "<group>"; };
+		4C7599D1281721DB00957666 /* LessonStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonStore.swift; sourceTree = "<group>"; };
 		4CEA92852816FE990058BB84 /* LessonsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LessonsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CEA92882816FE990058BB84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CEA928A2816FE990058BB84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				4C7599C82817162600957666 /* Infrastructure */,
+				4C7599CF281721B700957666 /* LocalLessonLoader.swift */,
+				4C7599D1281721DB00957666 /* LessonStore.swift */,
 			);
 			path = "Lesson Cache";
 			sourceTree = "<group>";
@@ -131,8 +137,8 @@
 			children = (
 				4C7599CB2817177B00957666 /* CoreDataLessonStore.swift */,
 				4C7599C92817165700957666 /* CoreDataHelpers.swift */,
-				4C7599C4281713F000957666 /* LessonStore.xcdatamodeld */,
 				4C7599CD281719AF00957666 /* ManagedLesson.swift */,
+				4C7599C4281713F000957666 /* LessonStore.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -334,11 +340,13 @@
 				4C7599C6281713F000957666 /* LessonStore.xcdatamodeld in Sources */,
 				4C7599CE281719AF00957666 /* ManagedLesson.swift in Sources */,
 				4CEA928B2816FE990058BB84 /* SceneDelegate.swift in Sources */,
+				4C7599D0281721B700957666 /* LocalLessonLoader.swift in Sources */,
 				4C7599B52816FFD600957666 /* Lesson.swift in Sources */,
 				4C7599CC2817177B00957666 /* CoreDataLessonStore.swift in Sources */,
 				4C7599BF2817040600957666 /* LessonMapper.swift in Sources */,
 				4C7599BD281702C900957666 /* LessonService.swift in Sources */,
 				4C7599CA2817165700957666 /* CoreDataHelpers.swift in Sources */,
+				4C7599D2281721DB00957666 /* LessonStore.swift in Sources */,
 				4C7599BB2817024000957666 /* LessonEndpoint.swift in Sources */,
 				4C7599B8281700C400957666 /* URLSessionHTTPClient.swift in Sources */,
 			);
