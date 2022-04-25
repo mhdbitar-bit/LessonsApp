@@ -12,6 +12,7 @@
 		4C7599BB2817024000957666 /* LessonEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7599BA2817024000957666 /* LessonEndpoint.swift */; };
 		4C7599BD281702C900957666 /* LessonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7599BC281702C900957666 /* LessonService.swift */; };
 		4C7599BF2817040600957666 /* LessonMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7599BE2817040600957666 /* LessonMapper.swift */; };
+		4C7599C6281713F000957666 /* LessonStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C7599C4281713F000957666 /* LessonStore.xcdatamodeld */; };
 		4CEA92892816FE990058BB84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA92882816FE990058BB84 /* AppDelegate.swift */; };
 		4CEA928B2816FE990058BB84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA928A2816FE990058BB84 /* SceneDelegate.swift */; };
 		4CEA92902816FE990058BB84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA928E2816FE990058BB84 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		4C7599BA2817024000957666 /* LessonEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonEndpoint.swift; sourceTree = "<group>"; };
 		4C7599BC281702C900957666 /* LessonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonService.swift; sourceTree = "<group>"; };
 		4C7599BE2817040600957666 /* LessonMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonMapper.swift; sourceTree = "<group>"; };
+		4C7599C5281713F000957666 /* LessonStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LessonStore.xcdatamodel; sourceTree = "<group>"; };
 		4CEA92852816FE990058BB84 /* LessonsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LessonsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CEA92882816FE990058BB84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CEA928A2816FE990058BB84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,14 @@
 			path = "Lesson API";
 			sourceTree = "<group>";
 		};
+		4C7599C3281713D100957666 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				4C7599C4281713F000957666 /* LessonStore.xcdatamodeld */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
 		4CEA927C2816FE990058BB84 = {
 			isa = PBXGroup;
 			children = (
@@ -133,8 +143,9 @@
 		4CEA92872816FE990058BB84 /* LessonsApp */ = {
 			isa = PBXGroup;
 			children = (
-				4C7599B92817022900957666 /* Lesson API */,
+				4C7599C3281713D100957666 /* Cache */,
 				4C7599B62817009E00957666 /* API Infrastructure */,
+				4C7599B92817022900957666 /* Lesson API */,
 				4C7599B32816FFAA00957666 /* Domain */,
 				4CEA92882816FE990058BB84 /* AppDelegate.swift */,
 				4CEA928A2816FE990058BB84 /* SceneDelegate.swift */,
@@ -295,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CEA92892816FE990058BB84 /* AppDelegate.swift in Sources */,
+				4C7599C6281713F000957666 /* LessonStore.xcdatamodeld in Sources */,
 				4CEA928B2816FE990058BB84 /* SceneDelegate.swift in Sources */,
 				4C7599B52816FFD600957666 /* Lesson.swift in Sources */,
 				4C7599BF2817040600957666 /* LessonMapper.swift in Sources */,
@@ -642,6 +654,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4C7599C4281713F000957666 /* LessonStore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4C7599C5281713F000957666 /* LessonStore.xcdatamodel */,
+			);
+			currentVersion = 4C7599C5281713F000957666 /* LessonStore.xcdatamodel */;
+			path = LessonStore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4CEA927D2816FE990058BB84 /* Project object */;
 }
