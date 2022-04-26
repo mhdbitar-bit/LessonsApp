@@ -9,9 +9,9 @@ import SwiftUI
 
 struct LessonDetailView: View {
     
+    @State var presentingVidewView = false
+    
     var body: some View {
-        
-  
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .center, spacing: 30) {
                 ZStack {
@@ -66,6 +66,9 @@ struct LessonDetailView: View {
             }
         }
         .background(Color("BackgroundColor"))
+        .sheet(isPresented: $presentingVidewView) {
+            VideoView()
+        }
         .navigationBarItems(trailing: Button(action: {
             print("test")
         }, label: {
@@ -81,7 +84,7 @@ struct LessonDetailView: View {
     }
     
     private func openVideo() {
-        
+        self.presentingVidewView = true
     }
 }
 
