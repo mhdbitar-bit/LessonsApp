@@ -27,6 +27,7 @@
 		4CEA92A02816FE9A0058BB84 /* LessonsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA929F2816FE9A0058BB84 /* LessonsAppTests.swift */; };
 		4CEA92AA2816FE9A0058BB84 /* LessonsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA92A92816FE9A0058BB84 /* LessonsAppUITests.swift */; };
 		4CEA92AC2816FE9A0058BB84 /* LessonsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA92AB2816FE9A0058BB84 /* LessonsAppUITestsLaunchTests.swift */; };
+		4CF1BEF02818396D001BA726 /* LessonsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF1BEEF2818396D001BA726 /* LessonsListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		4CEA92A52816FE9A0058BB84 /* LessonsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LessonsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CEA92A92816FE9A0058BB84 /* LessonsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsAppUITests.swift; sourceTree = "<group>"; };
 		4CEA92AB2816FE9A0058BB84 /* LessonsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4CF1BEEF2818396D001BA726 /* LessonsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 		4CEA92872816FE990058BB84 /* LessonsApp */ = {
 			isa = PBXGroup;
 			children = (
+				4CF1BEEE2818395C001BA726 /* Presentation */,
 				4C7599C3281713D100957666 /* Lesson Cache */,
 				4C7599B62817009E00957666 /* API Infrastructure */,
 				4C7599B92817022900957666 /* Lesson API */,
@@ -206,6 +209,14 @@
 				4CEA92AB2816FE9A0058BB84 /* LessonsAppUITestsLaunchTests.swift */,
 			);
 			path = LessonsAppUITests;
+			sourceTree = "<group>";
+		};
+		4CF1BEEE2818395C001BA726 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				4CF1BEEF2818396D001BA726 /* LessonsListViewController.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,6 +356,7 @@
 				4CEA928B2816FE990058BB84 /* SceneDelegate.swift in Sources */,
 				4C7599D0281721B700957666 /* LocalLessonLoader.swift in Sources */,
 				4C7599B52816FFD600957666 /* Lesson.swift in Sources */,
+				4CF1BEF02818396D001BA726 /* LessonsListViewController.swift in Sources */,
 				4C7599D4281724E700957666 /* CoreDataLessonStore+LessonStore.swift in Sources */,
 				4C7599CC2817177B00957666 /* CoreDataLessonStore.swift in Sources */,
 				4C7599BF2817040600957666 /* LessonMapper.swift in Sources */,
