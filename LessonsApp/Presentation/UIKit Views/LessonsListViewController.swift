@@ -7,29 +7,27 @@
 
 import UIKit
 import Combine
+import SwiftUI
 
 final class LessonsListViewController: UITableViewController {
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
-        navigationController?.navigationBar.prefersLargeTitles = true
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
         navigationItem.title = "Lessons"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationItem.largeTitleDisplayMode = .always
         
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = .backgroundColor
         appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        
+
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
         
         view.backgroundColor = .backgroundColor
         tableView.backgroundColor = .backgroundColor
@@ -59,5 +57,11 @@ extension LessonsListViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = UIHostingController(rootView: LessonDetailView())
+        
+        show(vc, sender: self)
     }
 }
