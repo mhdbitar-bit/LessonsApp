@@ -217,9 +217,7 @@
 		4CF1BEEE2818395C001BA726 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				4CF1BEF128184274001BA726 /* Extensions */,
-				4CF1BEEF2818396D001BA726 /* LessonsListViewController.swift */,
-				4CF1BEF6281855A1001BA726 /* LessonTableViewCell.swift */,
+				4CF1BEF82818560D001BA726 /* UIKit Views */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -231,6 +229,16 @@
 				4CF1BEF428184DAC001BA726 /* UIColor+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4CF1BEF82818560D001BA726 /* UIKit Views */ = {
+			isa = PBXGroup;
+			children = (
+				4CF1BEF128184274001BA726 /* Extensions */,
+				4CF1BEEF2818396D001BA726 /* LessonsListViewController.swift */,
+				4CF1BEF6281855A1001BA726 /* LessonTableViewCell.swift */,
+			);
+			path = "UIKit Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
