@@ -28,6 +28,8 @@
 		4CEA92AC2816FE9A0058BB84 /* LessonsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA92AB2816FE9A0058BB84 /* LessonsAppUITestsLaunchTests.swift */; };
 		4CF1BEF02818396D001BA726 /* LessonsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF1BEEF2818396D001BA726 /* LessonsListViewController.swift */; };
 		4CF1BEF328184284001BA726 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF1BEF228184284001BA726 /* UIView+Ext.swift */; };
+		4CF1BEF528184DAC001BA726 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF1BEF428184DAC001BA726 /* UIColor+Ext.swift */; };
+		4CF1BEF7281855A1001BA726 /* LessonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF1BEF6281855A1001BA726 /* LessonTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		4CEA92AB2816FE9A0058BB84 /* LessonsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4CF1BEEF2818396D001BA726 /* LessonsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsListViewController.swift; sourceTree = "<group>"; };
 		4CF1BEF228184284001BA726 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		4CF1BEF428184DAC001BA726 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		4CF1BEF6281855A1001BA726 /* LessonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +219,7 @@
 			children = (
 				4CF1BEF128184274001BA726 /* Extensions */,
 				4CF1BEEF2818396D001BA726 /* LessonsListViewController.swift */,
+				4CF1BEF6281855A1001BA726 /* LessonTableViewCell.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				4CF1BEF228184284001BA726 /* UIView+Ext.swift */,
+				4CF1BEF428184DAC001BA726 /* UIColor+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -362,7 +368,9 @@
 				4C7599C6281713F000957666 /* LessonStore.xcdatamodeld in Sources */,
 				4C7599CE281719AF00957666 /* ManagedLesson.swift in Sources */,
 				4CEA928B2816FE990058BB84 /* SceneDelegate.swift in Sources */,
+				4CF1BEF7281855A1001BA726 /* LessonTableViewCell.swift in Sources */,
 				4C7599D0281721B700957666 /* LocalLessonLoader.swift in Sources */,
+				4CF1BEF528184DAC001BA726 /* UIColor+Ext.swift in Sources */,
 				4C7599B52816FFD600957666 /* Lesson.swift in Sources */,
 				4CF1BEF02818396D001BA726 /* LessonsListViewController.swift in Sources */,
 				4C7599D4281724E700957666 /* CoreDataLessonStore+LessonStore.swift in Sources */,
