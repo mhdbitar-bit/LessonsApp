@@ -30,6 +30,7 @@
 		4CF1BEF328184284001BA726 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF1BEF228184284001BA726 /* UIView+Ext.swift */; };
 		4CF1BEF528184DAC001BA726 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF1BEF428184DAC001BA726 /* UIColor+Ext.swift */; };
 		4CF1BEF7281855A1001BA726 /* LessonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF1BEF6281855A1001BA726 /* LessonTableViewCell.swift */; };
+		4CF1BEFB28185683001BA726 /* LessonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF1BEFA28185683001BA726 /* LessonDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		4CF1BEF228184284001BA726 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		4CF1BEF428184DAC001BA726 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		4CF1BEF6281855A1001BA726 /* LessonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonTableViewCell.swift; sourceTree = "<group>"; };
+		4CF1BEFA28185683001BA726 /* LessonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 		4CF1BEEE2818395C001BA726 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				4CF1BEF928185631001BA726 /* SwiftUI Views */,
 				4CF1BEF82818560D001BA726 /* UIKit Views */,
 			);
 			path = Presentation;
@@ -239,6 +242,14 @@
 				4CF1BEF6281855A1001BA726 /* LessonTableViewCell.swift */,
 			);
 			path = "UIKit Views";
+			sourceTree = "<group>";
+		};
+		4CF1BEF928185631001BA726 /* SwiftUI Views */ = {
+			isa = PBXGroup;
+			children = (
+				4CF1BEFA28185683001BA726 /* LessonDetailView.swift */,
+			);
+			path = "SwiftUI Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CF1BEF328184284001BA726 /* UIView+Ext.swift in Sources */,
+				4CF1BEFB28185683001BA726 /* LessonDetailView.swift in Sources */,
 				4CEA92892816FE990058BB84 /* AppDelegate.swift in Sources */,
 				4C7599C6281713F000957666 /* LessonStore.xcdatamodeld in Sources */,
 				4C7599CE281719AF00957666 /* ManagedLesson.swift in Sources */,
