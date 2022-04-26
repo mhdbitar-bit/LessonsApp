@@ -189,8 +189,7 @@
 			children = (
 				4CF1BEEE2818395C001BA726 /* Presentation */,
 				4C7599C3281713D100957666 /* Lesson Cache */,
-				4C7599B62817009E00957666 /* API Infrastructure */,
-				4C7599B92817022900957666 /* Lesson API */,
+				4CF1BEFE28188B2E001BA726 /* Lesson Remote */,
 				4C7599B32816FFAA00957666 /* Domain */,
 				4CEA92882816FE990058BB84 /* AppDelegate.swift */,
 				4CEA928A2816FE990058BB84 /* SceneDelegate.swift */,
@@ -253,6 +252,15 @@
 				4CF1BEFC281880F4001BA726 /* VideoView.swift */,
 			);
 			path = "SwiftUI Views";
+			sourceTree = "<group>";
+		};
+		4CF1BEFE28188B2E001BA726 /* Lesson Remote */ = {
+			isa = PBXGroup;
+			children = (
+				4C7599B62817009E00957666 /* API Infrastructure */,
+				4C7599B92817022900957666 /* Lesson API */,
+			);
+			path = "Lesson Remote";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
