@@ -31,11 +31,8 @@ final class LessonsListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         view.backgroundColor = .backgroundColor
         tableView.backgroundColor = .backgroundColor
-        
         
         tableView.register(LessonTableViewCell.self, forCellReuseIdentifier: LessonTableViewCell.identifier)
     }
