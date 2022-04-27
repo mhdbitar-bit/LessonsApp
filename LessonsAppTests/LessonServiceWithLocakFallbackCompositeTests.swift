@@ -35,41 +35,13 @@ class LessonServiceWithLocakFallbackCompositeTests: XCTestCase {
         let primaryLessons = uniqueLessons()
         let fallbackLessons = uniqueLessons()
         let sut = makeSUT(primaryResult: .success(primaryLessons), fallbackResult: .success(fallbackLessons))
-        
-        let exp = expectation(description: "Wait for load completion")
-        sut.getLessons { result in
-            switch result {
-            case .success(let receivedLessons):
-                XCTAssertEqual(receivedLessons, primaryLessons)
-                
-            case .failure:
-                XCTFail("Expected successful load lessons result, got \(result) instead.")
-            }
-            
-            exp.fulfill()
-        }
-        
-        wait(for: [exp], timeout: 1.0)
+        expect(sut, toCompleteWith: .success(primaryLessons))
     }
     
     func test_load_deliversFallbackOnPrimaryFailure() {
         let fallbackLessons = uniqueLessons()
         let sut = makeSUT(primaryResult: .failure(anyNSError()), fallbackResult: .success(fallbackLessons))
-        
-        let exp = expectation(description: "Wait for load completion")
-        sut.getLessons { result in
-            switch result {
-            case .success(let receivedLessons):
-                XCTAssertEqual(receivedLessons, fallbackLessons)
-                
-            case .failure:
-                XCTFail("Expected successful load lessons result, got \(result) instead.")
-            }
-            
-            exp.fulfill()
-        }
-        
-        wait(for: [exp], timeout: 1.0)
+        expect(sut, toCompleteWith: .success(fallbackLessons))
     }
     
     // MARK: - Helpers
@@ -82,6 +54,26 @@ class LessonServiceWithLocakFallbackCompositeTests: XCTestCase {
         trackForMemoryLeaks(fallbackService, file: file, line: line)
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
+    }
+    
+    private func expect(_ sut: LessonService, toCompleteWith expectedResult: LessonService.Result, file: StaticString = #file, line: UInt = #line) {
+        let exp = expectation(description: "Wait for load completion")
+        sut.getLessons { receivedResult in
+            switch (receivedResult, expectedResult) {
+            case let (.success(receivedLessons), .success(expectedLessons)):
+                XCTAssertEqual(receivedLessons, expectedLessons, file: file, line: line)
+                
+            case (.failure, .failure):
+                break
+                
+            default:
+                XCTFail("Expected \(expectedResult), got \(receivedResult) instead.")
+            }
+            
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 1.0)
     }
     
     private func uniqueLessons() -> [Lesson] {
