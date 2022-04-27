@@ -43,7 +43,6 @@ extension ManagedLesson {
     }
     
     static func newUniqueInstance(in context: NSManagedObjectContext) throws -> ManagedLesson {
-        try deleteCache(in: context)
         return ManagedLesson(context: context)
     }
 }

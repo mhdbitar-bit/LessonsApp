@@ -40,12 +40,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let viewModel = LessonListViewModel(
             lessonService: LessonServiceWithLocakFallbackComposite(
-                primary: remoteLessonService,
+                primary:  LessonServiceCacheDecorator(
+                    decoratee: remoteLessonService,
+                    cache: localLessonsService
+                ),
                 fallback: localLessonsService
             ),
             imageDataService: LessonImageDataServiceWithFallbackComposite(
-                primary: remoteImageService,
-                fallback: localImageService
+                primary: localImageService,
+                fallback: LessonImageeServiceCacheDecorator(
+                    decoratee: remoteImageService,
+                    cache: localImageService
+                )
             )
         )
         let vc = LessonsListViewController(viewModel: viewModel)
