@@ -90,21 +90,13 @@ extension LessonsListViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: LessonTableViewCell.identifier, for: indexPath) as! LessonTableViewCell
+        let lesson = lessons[indexPath.row]
+        let cell = LessonTableViewCell()
         let image = UIImage(systemName: "chevron.forward")
         let disclosureIndicator = UIImageView(frame:CGRect(x: 0, y: 0, width: image?.size.width ?? 0, height: image?.size.height ?? 0))
         disclosureIndicator.image = image
         cell.accessoryView = disclosureIndicator
-        cell.configure(with: lessons[indexPath.row])
-        imageService?.loadImageData(from: lessons[indexPath.row].thumbnail) { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let data):
-                cell.lessonImage.image = data.map(UIImage.init) ?? nil
-            case .failure(let error):
-                break
-            }
-        }
+        cell.configure(with: lesson, imageService: imageService!)
         return cell
     }
         

@@ -20,7 +20,7 @@ final class LessonTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    private let lessonNameLabel: UILabel = {
+    private  let lessonNameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
         label.textAlignment = .left
@@ -71,7 +71,17 @@ final class LessonTableViewCell: UITableViewCell {
         )
     }
     
-    func configure(with lesson: Lesson) {
+    func configure(with lesson: Lesson, imageService: LessonImageDataService) {
         self.lessonNameLabel.text = lesson.name
+        imageService.loadImageData(from: lesson.thumbnail) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let data):
+                self.lessonImage.image = UIImage(data: data)
+            case .failure(let error):
+                // TODO Add retry button
+                break
+            }
+        }
     }
 }
