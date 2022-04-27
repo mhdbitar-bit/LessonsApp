@@ -11,12 +11,14 @@ import SwiftUI
 
 final class LessonsListViewController: UITableViewController, Alertable {
     
-    private var service: LessonService?
+    private var lessonService: LessonService?
+    private var imageService: LessonImageDataService?
     private var lessons = [Lesson]()
     
-    convenience init(service: LessonService) {
+    convenience init(lessonService: LessonService, imageService: LessonImageDataService) {
         self.init()
-        self.service = service
+        self.lessonService = lessonService
+        self.imageService = imageService
     }
     
     override func viewDidLoad() {
@@ -63,7 +65,7 @@ final class LessonsListViewController: UITableViewController, Alertable {
     
     @objc private func refresh() {
         refreshControl?.beginRefreshing()
-        service?.getLessons(completion: { [weak self] result in
+        lessonService?.getLessons(completion: { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let lessons):
@@ -94,9 +96,18 @@ extension LessonsListViewController {
         disclosureIndicator.image = image
         cell.accessoryView = disclosureIndicator
         cell.configure(with: lessons[indexPath.row])
+        imageService?.loadImageData(from: lessons[indexPath.row].thumbnail) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let data):
+                cell.lessonImage.image = data.map(UIImage.init) ?? nil
+            case .failure(let error):
+                break
+            }
+        }
         return cell
     }
-    
+        
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
