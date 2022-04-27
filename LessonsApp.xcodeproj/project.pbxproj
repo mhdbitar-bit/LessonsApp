@@ -31,6 +31,7 @@
 		4C98A1E12819D6FB00FDB648 /* LessonServiceWithLocakFallbackComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C98A1E02819D6FB00FDB648 /* LessonServiceWithLocakFallbackComposite.swift */; };
 		4C98A1E32819D76000FDB648 /* LessonImageDataServiceWithFallbackComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C98A1E22819D76000FDB648 /* LessonImageDataServiceWithFallbackComposite.swift */; };
 		4C98A1E62819DE7100FDB648 /* LessonServiceCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C98A1E52819DE7100FDB648 /* LessonServiceCacheDecorator.swift */; };
+		4C98A1E82819E1E900FDB648 /* LessonImageeServiceCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C98A1E72819E1E900FDB648 /* LessonImageeServiceCacheDecorator.swift */; };
 		4CEA92892816FE990058BB84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA92882816FE990058BB84 /* AppDelegate.swift */; };
 		4CEA928B2816FE990058BB84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA928A2816FE990058BB84 /* SceneDelegate.swift */; };
 		4CEA92922816FE9A0058BB84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA92912816FE9A0058BB84 /* Assets.xcassets */; };
@@ -88,6 +89,7 @@
 		4C98A1E02819D6FB00FDB648 /* LessonServiceWithLocakFallbackComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonServiceWithLocakFallbackComposite.swift; sourceTree = "<group>"; };
 		4C98A1E22819D76000FDB648 /* LessonImageDataServiceWithFallbackComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonImageDataServiceWithFallbackComposite.swift; sourceTree = "<group>"; };
 		4C98A1E52819DE7100FDB648 /* LessonServiceCacheDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonServiceCacheDecorator.swift; sourceTree = "<group>"; };
+		4C98A1E72819E1E900FDB648 /* LessonImageeServiceCacheDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonImageeServiceCacheDecorator.swift; sourceTree = "<group>"; };
 		4CEA92852816FE990058BB84 /* LessonsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LessonsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CEA92882816FE990058BB84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CEA928A2816FE990058BB84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -233,8 +235,9 @@
 				4CEA92882816FE990058BB84 /* AppDelegate.swift */,
 				4CEA928A2816FE990058BB84 /* SceneDelegate.swift */,
 				4C98A1E02819D6FB00FDB648 /* LessonServiceWithLocakFallbackComposite.swift */,
-				4C98A1E52819DE7100FDB648 /* LessonServiceCacheDecorator.swift */,
 				4C98A1E22819D76000FDB648 /* LessonImageDataServiceWithFallbackComposite.swift */,
+				4C98A1E52819DE7100FDB648 /* LessonServiceCacheDecorator.swift */,
+				4C98A1E72819E1E900FDB648 /* LessonImageeServiceCacheDecorator.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				4CEA92892816FE990058BB84 /* AppDelegate.swift in Sources */,
 				4C7599C6281713F000957666 /* LessonStore.xcdatamodeld in Sources */,
 				4C98A1E32819D76000FDB648 /* LessonImageDataServiceWithFallbackComposite.swift in Sources */,
+				4C98A1E82819E1E900FDB648 /* LessonImageeServiceCacheDecorator.swift in Sources */,
 				4C98A1E62819DE7100FDB648 /* LessonServiceCacheDecorator.swift in Sources */,
 				4C7599CE281719AF00957666 /* ManagedLesson.swift in Sources */,
 				4CEA928B2816FE990058BB84 /* SceneDelegate.swift in Sources */,
