@@ -12,12 +12,6 @@ enum NetworkError: Error {
     case invalidData
 }
 
-protocol LessonService {
-    typealias Result = Swift.Result<[Lesson], Error>
-    
-    func getLessons(completion: @escaping (Result) -> Void)
-}
-
 final class RemoteLessonsService: LessonService {
     typealias Result = LessonService.Result
     
