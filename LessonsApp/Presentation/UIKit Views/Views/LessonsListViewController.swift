@@ -15,6 +15,13 @@ final class LessonsListViewController: UITableViewController {
         super.viewDidLoad()
     
         navigationItem.title = "Lessons"
+        view.backgroundColor = .backgroundColor
+        setupNavigation()
+        setupTableView()
+        setupRefreshControl()
+    }
+    
+    private func setupNavigation() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.largeTitleDisplayMode = .always
         
@@ -28,11 +35,20 @@ final class LessonsListViewController: UITableViewController {
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        
-        view.backgroundColor = .backgroundColor
+    }
+    
+    private func setupTableView() {
         tableView.backgroundColor = .backgroundColor
-        
         tableView.register(LessonTableViewCell.self, forCellReuseIdentifier: LessonTableViewCell.identifier)
+    }
+    
+    private func setupRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
+    }
+    
+    @objc private func refresh() {
+        // Load data
     }
 }
 
