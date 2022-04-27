@@ -22,7 +22,6 @@ final class LessonTableViewCell: UITableViewCell {
     
     private let lessonNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "ecrets For Capturing Beautiful iPhone Portrait Photos"
         label.textColor = .white
         label.textAlignment = .left
         label.numberOfLines = 0
@@ -70,5 +69,9 @@ final class LessonTableViewCell: UITableViewCell {
             width: frame.size.width,
             height: 0
         )
+    }
+    
+    func configure(with lesson: Lesson) {
+        self.lessonNameLabel.text = lesson.name
     }
 }

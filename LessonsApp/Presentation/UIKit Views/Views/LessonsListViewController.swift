@@ -65,7 +65,6 @@ final class LessonsListViewController: UITableViewController, Alertable {
         refreshControl?.beginRefreshing()
         service?.getLessons(completion: { [weak self] result in
             guard let self = self else { return }
-            self.refreshControl?.endRefreshing()
             switch result {
             case .success(let lessons):
                 self.lessons = lessons
@@ -73,6 +72,7 @@ final class LessonsListViewController: UITableViewController, Alertable {
             case .failure(let error):
                 self.showAlert(message: error.localizedDescription)
             }
+            self.refreshControl?.endRefreshing()
         })
     }
 }
@@ -88,11 +88,12 @@ extension LessonsListViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: LessonTableViewCell.identifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: LessonTableViewCell.identifier, for: indexPath) as! LessonTableViewCell
         let image = UIImage(systemName: "chevron.forward")
         let disclosureIndicator = UIImageView(frame:CGRect(x: 0, y: 0, width: image?.size.width ?? 0, height: image?.size.height ?? 0))
         disclosureIndicator.image = image
         cell.accessoryView = disclosureIndicator
+        cell.configure(with: lessons[indexPath.row])
         return cell
     }
     
