@@ -23,7 +23,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func makeRootViewController() -> LessonsListViewController {
-        let vc = LessonsListViewController()
+        let url = URL(string: "https://iphonephotographyschool.com/test-api/lessons")!
+        let session = URLSession(configuration: .ephemeral)
+        let client = URLSessionHTTPClient(session: session)
+        let lessonService = RemoteLessonsService(url: url, client: client)
+        let imageService = RemoteImageDataService(client: client)
+        let viewModel = LessonListViewModel(lessonService: lessonService, imageDataService: imageService)
+        let vc = LessonsListViewController(viewModel: viewModel)
         return vc
     }
 }

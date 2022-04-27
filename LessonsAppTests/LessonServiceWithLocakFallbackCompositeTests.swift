@@ -25,9 +25,7 @@ class LessonServiceWithLocakFallbackCompositeTests: XCTestCase {
     func test_load_deliversPrimaryLessonsOnPrimarySuccess() {
         let primaryLessons = uniqueLessons()
         let fallbackLessons = uniqueLessons()
-        let primaryService = LoaderStub(result: .success(primaryLessons))
-        let fallbackService = LoaderStub(result: .success(fallbackLessons))
-        let sut = LessonServiceWithLocakFallbackComposite(primary: primaryService, fallback: fallbackService)
+        let sut = makeSUT(primaryResult: .success(primaryLessons), fallbackResult: .success(fallbackLessons))
         
         let exp = expectation(description: "Wait for load completion")
         sut.getLessons { result in
@@ -43,6 +41,18 @@ class LessonServiceWithLocakFallbackCompositeTests: XCTestCase {
         }
         
         wait(for: [exp], timeout: 1.0)
+    }
+    
+    // MARK: - Helpers
+    
+    private func makeSUT(primaryResult: LessonService.Result, fallbackResult: LessonService.Result, file: StaticString = #file, line: UInt = #line) -> LessonService {
+        let primaryService = LoaderStub(result: primaryResult)
+        let fallbackService = LoaderStub(result: fallbackResult)
+        let sut = LessonServiceWithLocakFallbackComposite(primary: primaryService, fallback: fallbackService)
+        trackForMemoryLeaks(primaryService, file: file, line: line)
+        trackForMemoryLeaks(fallbackService, file: file, line: line)
+        trackForMemoryLeaks(sut, file: file, line: line)
+        return sut
     }
     
     private func uniqueLessons() -> [Lesson] {

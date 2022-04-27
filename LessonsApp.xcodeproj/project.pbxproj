@@ -27,6 +27,7 @@
 		4C98A1D82819B5F300FDB648 /* LocaleImageDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C98A1D72819B5F300FDB648 /* LocaleImageDataService.swift */; };
 		4C98A1DA2819B63B00FDB648 /* ImadeDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C98A1D92819B63B00FDB648 /* ImadeDataStore.swift */; };
 		4C98A1DC2819B8B200FDB648 /* CoreDataLessonStore+ImadeDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C98A1DB2819B8B200FDB648 /* CoreDataLessonStore+ImadeDataStore.swift */; };
+		4C98A1DF2819D37700FDB648 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C98A1DE2819D37700FDB648 /* XCTestCase+MemoryLeakTracking.swift */; };
 		4CEA92892816FE990058BB84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA92882816FE990058BB84 /* AppDelegate.swift */; };
 		4CEA928B2816FE990058BB84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA928A2816FE990058BB84 /* SceneDelegate.swift */; };
 		4CEA92922816FE9A0058BB84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA92912816FE9A0058BB84 /* Assets.xcassets */; };
@@ -80,6 +81,7 @@
 		4C98A1D72819B5F300FDB648 /* LocaleImageDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleImageDataService.swift; sourceTree = "<group>"; };
 		4C98A1D92819B63B00FDB648 /* ImadeDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImadeDataStore.swift; sourceTree = "<group>"; };
 		4C98A1DB2819B8B200FDB648 /* CoreDataLessonStore+ImadeDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataLessonStore+ImadeDataStore.swift"; sourceTree = "<group>"; };
+		4C98A1DE2819D37700FDB648 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		4CEA92852816FE990058BB84 /* LessonsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LessonsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CEA92882816FE990058BB84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CEA928A2816FE990058BB84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -211,6 +213,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		4C98A1DD2819D36C00FDB648 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4C98A1DE2819D37700FDB648 /* XCTestCase+MemoryLeakTracking.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		4CEA927C2816FE990058BB84 = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +260,7 @@
 		4CEA929E2816FE9A0058BB84 /* LessonsAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				4C98A1DD2819D36C00FDB648 /* Helpers */,
 				4CEA929F2816FE9A0058BB84 /* LessonServiceWithLocakFallbackCompositeTests.swift */,
 			);
 			path = LessonsAppTests;
@@ -477,6 +488,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CEA92A02816FE9A0058BB84 /* LessonServiceWithLocakFallbackCompositeTests.swift in Sources */,
+				4C98A1DF2819D37700FDB648 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
