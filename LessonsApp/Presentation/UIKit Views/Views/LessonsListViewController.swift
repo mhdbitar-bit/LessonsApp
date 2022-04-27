@@ -9,8 +9,16 @@ import UIKit
 import Combine
 import SwiftUI
 
-final class LessonsListViewController: UITableViewController {
-        
+final class LessonsListViewController: UITableViewController, Alertable {
+    
+    private var service: LessonService?
+    private var lessons = [Lesson]()
+    
+    convenience init(service: LessonService) {
+        self.init()
+        self.service = service
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -19,6 +27,12 @@ final class LessonsListViewController: UITableViewController {
         setupNavigation()
         setupTableView()
         setupRefreshControl()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        refresh()
     }
     
     private func setupNavigation() {
@@ -48,7 +62,18 @@ final class LessonsListViewController: UITableViewController {
     }
     
     @objc private func refresh() {
-        // Load data
+        refreshControl?.beginRefreshing()
+        service?.getLessons(completion: { [weak self] result in
+            guard let self = self else { return }
+            self.refreshControl?.endRefreshing()
+            switch result {
+            case .success(let lessons):
+                self.lessons = lessons
+                self.tableView.reloadData()
+            case .failure(let error):
+                self.showAlert(message: error.localizedDescription)
+            }
+        })
     }
 }
 
@@ -59,7 +84,7 @@ extension LessonsListViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return lessons.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
