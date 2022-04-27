@@ -3,7 +3,7 @@
     <entity name="ManagedLesson" representedClassName="ManagedLesson" syncable="YES">
         <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO"/>
         <attribute name="lessonDescription" attributeType="String"/>
-        <attribute name="thumbnailUrl" attributeType="URI"/>
+        <attribute name="thumbnailUrl" attributeType="Binary"/>
         <attribute name="videoUrl" attributeType="URI"/>
     </entity>
     <elements>

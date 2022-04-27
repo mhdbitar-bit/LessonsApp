@@ -11,14 +11,13 @@ import SwiftUI
 
 final class LessonsListViewController: UITableViewController, Alertable {
     
-    private var lessonService: LessonService?
-    private var imageService: LessonImageDataService?
+    private var viewModel: LessonListViewModel!
     private var lessons = [Lesson]()
+    private var cancellables: Set<AnyCancellable> = []
     
-    convenience init(lessonService: LessonService, imageService: LessonImageDataService) {
+    convenience init(viewModel: LessonListViewModel) {
         self.init()
-        self.lessonService = lessonService
-        self.imageService = imageService
+        self.viewModel = viewModel
     }
     
     override func viewDidLoad() {
@@ -29,12 +28,15 @@ final class LessonsListViewController: UITableViewController, Alertable {
         setupNavigation()
         setupTableView()
         setupRefreshControl()
+        bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        refresh()
+        if tableView.numberOfRows(inSection: 0) == 0 {
+            refresh()
+        }
     }
     
     private func setupNavigation() {
@@ -63,19 +65,46 @@ final class LessonsListViewController: UITableViewController, Alertable {
         refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
     }
     
-    @objc private func refresh() {
-        refreshControl?.beginRefreshing()
-        lessonService?.getLessons(completion: { [weak self] result in
+    private func bind() {
+        bindLoading()
+        bindError()
+        bindLessons()
+    }
+    
+    private func bindLoading() {
+        viewModel.$isLoading.sink { [weak self] isLoading in
             guard let self = self else { return }
-            switch result {
-            case .success(let lessons):
-                self.lessons = lessons
-                self.tableView.reloadData()
-            case .failure(let error):
-                self.showAlert(message: error.localizedDescription)
+            DispatchQueue.main.async {
+                if isLoading {
+                    self.refreshControl?.beginRefreshing()
+                } else {
+                    self.refreshControl?.endRefreshing()
+                }
             }
-            self.refreshControl?.endRefreshing()
-        })
+        }.store(in: &cancellables)
+    }
+    
+    private func bindError() {
+        viewModel.$error.sink { [weak self] error in
+            guard let self = self else { return }
+            if let error = error {
+                self.showAlert(message: error)
+            }
+        }.store(in: &cancellables)
+    }
+    
+    private func bindLessons() {
+        viewModel.$lessons.sink { [weak self] lessons in
+            guard let self = self else { return }
+            self.lessons = lessons
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }.store(in: &cancellables)
+    }
+    
+    @objc private func refresh() {
+        viewModel.loadLessons()
     }
 }
 
@@ -96,7 +125,7 @@ extension LessonsListViewController {
         let disclosureIndicator = UIImageView(frame:CGRect(x: 0, y: 0, width: image?.size.width ?? 0, height: image?.size.height ?? 0))
         disclosureIndicator.image = image
         cell.accessoryView = disclosureIndicator
-        cell.configure(with: lesson, imageService: imageService!)
+        cell.configure(with: lesson, imageService: viewModel.imageDataService)
         return cell
     }
         
