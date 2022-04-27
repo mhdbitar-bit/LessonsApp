@@ -31,7 +31,7 @@
 		4CEA928B2816FE990058BB84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA928A2816FE990058BB84 /* SceneDelegate.swift */; };
 		4CEA92922816FE9A0058BB84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA92912816FE9A0058BB84 /* Assets.xcassets */; };
 		4CEA92952816FE9A0058BB84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA92932816FE9A0058BB84 /* LaunchScreen.storyboard */; };
-		4CEA92A02816FE9A0058BB84 /* LessonsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA929F2816FE9A0058BB84 /* LessonsAppTests.swift */; };
+		4CEA92A02816FE9A0058BB84 /* LessonServiceWithLocakFallbackCompositeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA929F2816FE9A0058BB84 /* LessonServiceWithLocakFallbackCompositeTests.swift */; };
 		4CEA92AA2816FE9A0058BB84 /* LessonsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA92A92816FE9A0058BB84 /* LessonsAppUITests.swift */; };
 		4CEA92AC2816FE9A0058BB84 /* LessonsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA92AB2816FE9A0058BB84 /* LessonsAppUITestsLaunchTests.swift */; };
 		4CF1BEF02818396D001BA726 /* LessonsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF1BEEF2818396D001BA726 /* LessonsListViewController.swift */; };
@@ -87,7 +87,7 @@
 		4CEA92942816FE9A0058BB84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CEA92962816FE9A0058BB84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CEA929B2816FE9A0058BB84 /* LessonsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LessonsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CEA929F2816FE9A0058BB84 /* LessonsAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsAppTests.swift; sourceTree = "<group>"; };
+		4CEA929F2816FE9A0058BB84 /* LessonServiceWithLocakFallbackCompositeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonServiceWithLocakFallbackCompositeTests.swift; sourceTree = "<group>"; };
 		4CEA92A52816FE9A0058BB84 /* LessonsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LessonsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CEA92A92816FE9A0058BB84 /* LessonsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsAppUITests.swift; sourceTree = "<group>"; };
 		4CEA92AB2816FE9A0058BB84 /* LessonsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -250,7 +250,7 @@
 		4CEA929E2816FE9A0058BB84 /* LessonsAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				4CEA929F2816FE9A0058BB84 /* LessonsAppTests.swift */,
+				4CEA929F2816FE9A0058BB84 /* LessonServiceWithLocakFallbackCompositeTests.swift */,
 			);
 			path = LessonsAppTests;
 			sourceTree = "<group>";
@@ -476,7 +476,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CEA92A02816FE9A0058BB84 /* LessonsAppTests.swift in Sources */,
+				4CEA92A02816FE9A0058BB84 /* LessonServiceWithLocakFallbackCompositeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
