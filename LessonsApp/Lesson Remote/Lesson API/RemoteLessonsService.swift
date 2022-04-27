@@ -1,5 +1,5 @@
 //
-//  LessonService.swift
+//  RemoteLessonsService.swift
 //  LessonsApp
 //
 //  Created by Mohammad Bitar on 4/25/22.
