@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -26,9 +27,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let url = URL(string: "https://iphonephotographyschool.com/test-api/lessons")!
         let session = URLSession(configuration: .ephemeral)
         let client = URLSessionHTTPClient(session: session)
-        let lessonService = RemoteLessonsService(url: url, client: client)
-        let imageService = RemoteImageDataService(client: client)
-        let viewModel = LessonListViewModel(lessonService: lessonService, imageDataService: imageService)
+        let remoteLessonService = RemoteLessonsService(url: url, client: client)
+        let remoteImageService = RemoteImageDataService(client: client)
+        
+        let localStoreURL = NSPersistentContainer
+            .defaultDirectoryURL()
+            .appendingPathComponent("lessons-store.sqlite")
+        
+        let localStore = try! CoreDataLessonStore(storeURL: localStoreURL)
+        let localLessonsService = LocalLessonService(store: localStore)
+        let localImageService = LocaleImageDataService(store: localStore)
+        
+        let viewModel = LessonListViewModel(
+            lessonService: LessonServiceWithLocakFallbackComposite(
+                primary: remoteLessonService,
+                fallback: localLessonsService
+            ),
+            imageDataService: LessonImageDataServiceWithFallbackComposite(
+                primary: remoteImageService,
+                fallback: localImageService
+            )
+        )
         let vc = LessonsListViewController(viewModel: viewModel)
         return vc
     }
