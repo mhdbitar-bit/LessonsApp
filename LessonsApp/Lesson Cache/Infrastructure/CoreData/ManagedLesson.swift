@@ -24,6 +24,14 @@ extension ManagedLesson {
         return try context.fetch(request).first
     }
     
+    static func find(where url: URL, in context: NSManagedObjectContext) throws -> ManagedLesson? {
+        let request = NSFetchRequest<ManagedLesson>(entityName: entity().name!)
+        request.predicate = NSPredicate(format: "%K = %@", argumentArray: [#keyPath(ManagedLesson.thumbnailUrl), url])
+        request.returnsObjectsAsFaults = false
+        request.fetchLimit = 1
+        return try context.fetch(request).first
+    }
+    
     static func lessons(in context: NSManagedObjectContext) throws -> [ManagedLesson] {
         let request = NSFetchRequest<ManagedLesson>(entityName: entity().name!)
         request.returnsObjectsAsFaults = false

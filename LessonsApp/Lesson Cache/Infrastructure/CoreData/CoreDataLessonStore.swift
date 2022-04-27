@@ -32,11 +32,11 @@ final class CoreDataLessonStore {
         }
     }
     
-    func performSync<R>(_ action: (NSManagedObjectContext) -> Result<R, Error>) throws -> R {
+    func perform(_ action: @escaping (NSManagedObjectContext) -> Void) {
         let context = self.context
-        var result: Result<R, Error>!
-        context.performAndWait { result = action(context) }
-        return try result.get()
+        context.perform {
+            action(context)
+        }
     }
     
     private func cleanUpReferencesToPersistentStores() {

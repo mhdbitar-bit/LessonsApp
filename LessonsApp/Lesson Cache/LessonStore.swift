@@ -8,7 +8,11 @@
 import Foundation
 
 protocol LessonStore {
-    func deleteCachedLessons() throws
-    func insert(_ lesson: Lesson) throws
-    func retrieve() throws -> [Lesson]
+    typealias DeletionResult = Result<Void, Error>
+    typealias InsertionResult = Result<Void, Error>
+    typealias RetrievalResult = Result<[Lesson], Error>
+    
+    func deleteCachedLessons(completion: @escaping (DeletionResult) -> Void)
+    func insert(_ lesson: Lesson, completion: @escaping (InsertionResult) -> Void)
+    func retrieve(completion: @escaping (RetrievalResult) -> Void)
 }

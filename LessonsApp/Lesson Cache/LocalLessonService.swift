@@ -9,10 +9,13 @@ import Foundation
 
 enum CacheError: Error {
     case noData
+    case failed
 }
 
 protocol LessonCache {
-    func save(_ lesson: Lesson) throws
+    typealias SaveResult = Result<Void, Error>
+    
+    func save(_ lessons: [Lesson], completion: @escaping (SaveResult) -> Void)
 }
 
 final class LocalLessonService {
@@ -24,20 +27,35 @@ final class LocalLessonService {
 }
 
 extension LocalLessonService: LessonCache {
-    func save(_ lesson: Lesson) throws {
-        try store.deleteCachedLessons()
-        try store.insert(lesson)
+    
+    func save(_ lessons: [Lesson], completion: @escaping (SaveResult) -> Void) {
+        store.deleteCachedLessons { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.storeLesson(lessons, completion: completion)
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    private func storeLesson(_ lessons: [Lesson], completion: @escaping (SaveResult) -> Void) {
+        lessons.forEach { lesson in
+            self.store.insert(lesson, completion: completion)
+        }
     }
 }
 
 extension LocalLessonService: LessonService {
-    typealias Result = LessonService.Result
-    
-    func getLessons(completion: @escaping (Result) -> Void) {
-        do {
-            completion(.success(try store.retrieve()))
-        } catch {
-            completion(.failure(CacheError.noData))
+    func getLessons(completion: @escaping (LessonService.Result) -> Void) {
+        store.retrieve { result in
+            switch result {
+            case .success(let lessons):
+                completion(.success(lessons))
+            case .failure(let error):
+                completion(.failure(error))
+            }
         }
     }
 }

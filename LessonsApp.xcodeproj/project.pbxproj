@@ -158,8 +158,8 @@
 			children = (
 				4C7599C82817162600957666 /* Infrastructure */,
 				4C7599CF281721B700957666 /* LocalLessonService.swift */,
-				4C98A1D92819B63B00FDB648 /* ImadeDataStore.swift */,
 				4C98A1D72819B5F300FDB648 /* LocaleImageDataService.swift */,
+				4C98A1D92819B63B00FDB648 /* ImadeDataStore.swift */,
 				4C7599D1281721DB00957666 /* LessonStore.swift */,
 			);
 			path = "Lesson Cache";

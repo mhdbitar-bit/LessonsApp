@@ -78,7 +78,7 @@ final class LessonTableViewCell: UITableViewCell {
             switch result {
             case .success(let data):
                 self.lessonImage.image = UIImage(data: data)
-            case .failure(let error):
+            case .failure:
                 // TODO Add retry button
                 break
             }
