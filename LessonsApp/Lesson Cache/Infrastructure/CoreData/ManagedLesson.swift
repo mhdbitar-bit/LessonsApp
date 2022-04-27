@@ -14,6 +14,7 @@ class ManagedLesson: NSManagedObject {
     @NSManaged var lessonDescription: String
     @NSManaged var thumbnailUrl: URL
     @NSManaged var videoUrl: URL
+    @NSManaged var imageData: Data?
 }
 
 extension ManagedLesson {
