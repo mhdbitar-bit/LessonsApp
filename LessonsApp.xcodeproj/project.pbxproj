@@ -28,6 +28,7 @@
 		4C98A1DA2819B63B00FDB648 /* ImadeDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C98A1D92819B63B00FDB648 /* ImadeDataStore.swift */; };
 		4C98A1DC2819B8B200FDB648 /* CoreDataLessonStore+ImadeDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C98A1DB2819B8B200FDB648 /* CoreDataLessonStore+ImadeDataStore.swift */; };
 		4C98A1DF2819D37700FDB648 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C98A1DE2819D37700FDB648 /* XCTestCase+MemoryLeakTracking.swift */; };
+		4C98A1E12819D6FB00FDB648 /* LessonServiceWithLocakFallbackComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C98A1E02819D6FB00FDB648 /* LessonServiceWithLocakFallbackComposite.swift */; };
 		4CEA92892816FE990058BB84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA92882816FE990058BB84 /* AppDelegate.swift */; };
 		4CEA928B2816FE990058BB84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA928A2816FE990058BB84 /* SceneDelegate.swift */; };
 		4CEA92922816FE9A0058BB84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA92912816FE9A0058BB84 /* Assets.xcassets */; };
@@ -82,6 +83,7 @@
 		4C98A1D92819B63B00FDB648 /* ImadeDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImadeDataStore.swift; sourceTree = "<group>"; };
 		4C98A1DB2819B8B200FDB648 /* CoreDataLessonStore+ImadeDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataLessonStore+ImadeDataStore.swift"; sourceTree = "<group>"; };
 		4C98A1DE2819D37700FDB648 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
+		4C98A1E02819D6FB00FDB648 /* LessonServiceWithLocakFallbackComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonServiceWithLocakFallbackComposite.swift; sourceTree = "<group>"; };
 		4CEA92852816FE990058BB84 /* LessonsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LessonsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CEA92882816FE990058BB84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CEA928A2816FE990058BB84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				4CEA92912816FE9A0058BB84 /* Assets.xcassets */,
 				4CEA92932816FE9A0058BB84 /* LaunchScreen.storyboard */,
 				4CEA92962816FE9A0058BB84 /* Info.plist */,
+				4C98A1E02819D6FB00FDB648 /* LessonServiceWithLocakFallbackComposite.swift */,
 			);
 			path = LessonsApp;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				4CF1BEF528184DAC001BA726 /* UIColor+Ext.swift in Sources */,
 				4C7599B52816FFD600957666 /* Lesson.swift in Sources */,
 				4CF1BEF02818396D001BA726 /* LessonsListViewController.swift in Sources */,
+				4C98A1E12819D6FB00FDB648 /* LessonServiceWithLocakFallbackComposite.swift in Sources */,
 				4C7599D4281724E700957666 /* CoreDataLessonStore+LessonStore.swift in Sources */,
 				4C7599CC2817177B00957666 /* CoreDataLessonStore.swift in Sources */,
 				4C98A1D42819A82500FDB648 /* LessonListViewModel.swift in Sources */,
