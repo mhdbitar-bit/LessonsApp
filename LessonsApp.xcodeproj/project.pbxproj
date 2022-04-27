@@ -30,6 +30,7 @@
 		4C98A1DF2819D37700FDB648 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C98A1DE2819D37700FDB648 /* XCTestCase+MemoryLeakTracking.swift */; };
 		4C98A1E12819D6FB00FDB648 /* LessonServiceWithLocakFallbackComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C98A1E02819D6FB00FDB648 /* LessonServiceWithLocakFallbackComposite.swift */; };
 		4C98A1E32819D76000FDB648 /* LessonImageDataServiceWithFallbackComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C98A1E22819D76000FDB648 /* LessonImageDataServiceWithFallbackComposite.swift */; };
+		4C98A1E62819DE7100FDB648 /* LessonServiceCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C98A1E52819DE7100FDB648 /* LessonServiceCacheDecorator.swift */; };
 		4CEA92892816FE990058BB84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA92882816FE990058BB84 /* AppDelegate.swift */; };
 		4CEA928B2816FE990058BB84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA928A2816FE990058BB84 /* SceneDelegate.swift */; };
 		4CEA92922816FE9A0058BB84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA92912816FE9A0058BB84 /* Assets.xcassets */; };
@@ -86,6 +87,7 @@
 		4C98A1DE2819D37700FDB648 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		4C98A1E02819D6FB00FDB648 /* LessonServiceWithLocakFallbackComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonServiceWithLocakFallbackComposite.swift; sourceTree = "<group>"; };
 		4C98A1E22819D76000FDB648 /* LessonImageDataServiceWithFallbackComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonImageDataServiceWithFallbackComposite.swift; sourceTree = "<group>"; };
+		4C98A1E52819DE7100FDB648 /* LessonServiceCacheDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonServiceCacheDecorator.swift; sourceTree = "<group>"; };
 		4CEA92852816FE990058BB84 /* LessonsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LessonsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CEA92882816FE990058BB84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CEA928A2816FE990058BB84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -225,6 +227,18 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		4C98A1E42819DDE900FDB648 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4CEA92882816FE990058BB84 /* AppDelegate.swift */,
+				4CEA928A2816FE990058BB84 /* SceneDelegate.swift */,
+				4C98A1E02819D6FB00FDB648 /* LessonServiceWithLocakFallbackComposite.swift */,
+				4C98A1E52819DE7100FDB648 /* LessonServiceCacheDecorator.swift */,
+				4C98A1E22819D76000FDB648 /* LessonImageDataServiceWithFallbackComposite.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		4CEA927C2816FE990058BB84 = {
 			isa = PBXGroup;
 			children = (
@@ -252,13 +266,10 @@
 				4C7599C3281713D100957666 /* Lesson Cache */,
 				4CF1BEFE28188B2E001BA726 /* Lesson Remote */,
 				4C7599B32816FFAA00957666 /* Domain */,
-				4CEA92882816FE990058BB84 /* AppDelegate.swift */,
-				4CEA928A2816FE990058BB84 /* SceneDelegate.swift */,
+				4C98A1E42819DDE900FDB648 /* Main */,
 				4CEA92912816FE9A0058BB84 /* Assets.xcassets */,
 				4CEA92932816FE9A0058BB84 /* LaunchScreen.storyboard */,
 				4CEA92962816FE9A0058BB84 /* Info.plist */,
-				4C98A1E02819D6FB00FDB648 /* LessonServiceWithLocakFallbackComposite.swift */,
-				4C98A1E22819D76000FDB648 /* LessonImageDataServiceWithFallbackComposite.swift */,
 			);
 			path = LessonsApp;
 			sourceTree = "<group>";
@@ -464,6 +475,7 @@
 				4CEA92892816FE990058BB84 /* AppDelegate.swift in Sources */,
 				4C7599C6281713F000957666 /* LessonStore.xcdatamodeld in Sources */,
 				4C98A1E32819D76000FDB648 /* LessonImageDataServiceWithFallbackComposite.swift in Sources */,
+				4C98A1E62819DE7100FDB648 /* LessonServiceCacheDecorator.swift in Sources */,
 				4C7599CE281719AF00957666 /* ManagedLesson.swift in Sources */,
 				4CEA928B2816FE990058BB84 /* SceneDelegate.swift in Sources */,
 				4CF1BEF7281855A1001BA726 /* LessonTableViewCell.swift in Sources */,
