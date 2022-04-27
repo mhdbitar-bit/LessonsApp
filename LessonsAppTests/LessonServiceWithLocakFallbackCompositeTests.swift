@@ -44,6 +44,11 @@ class LessonServiceWithLocakFallbackCompositeTests: XCTestCase {
         expect(sut, toCompleteWith: .success(fallbackLessons))
     }
     
+    func test_load_deliversErrorOnBothPrimaryAndFallbackServiceFailure() {
+        let sut = makeSUT(primaryResult: .failure(anyNSError()), fallbackResult: .failure(anyNSError()))
+        expect(sut, toCompleteWith: .failure(anyNSError()))
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(primaryResult: LessonService.Result, fallbackResult: LessonService.Result, file: StaticString = #file, line: UInt = #line) -> LessonService {
