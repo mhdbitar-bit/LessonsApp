@@ -10,13 +10,22 @@ import XCTest
 
 class LessonServiceWithLocakFallbackComposite: LessonService {
     private let primary: LessonService
+    private let fallback: LessonService
     
     init(primary: LessonService, fallback: LessonService) {
         self.primary = primary
+        self.fallback = fallback
     }
     
     func getLessons(completion: @escaping (LessonService.Result) -> Void) {
-        primary.getLessons(completion: completion)
+        primary.getLessons { [weak self] result in
+            switch result {
+            case .success:
+                completion(result)
+            case .failure:
+                self?.fallback.getLessons(completion: completion)
+            }
+        }
     }
 }
 
@@ -32,6 +41,26 @@ class LessonServiceWithLocakFallbackCompositeTests: XCTestCase {
             switch result {
             case .success(let receivedLessons):
                 XCTAssertEqual(receivedLessons, primaryLessons)
+                
+            case .failure:
+                XCTFail("Expected successful load lessons result, got \(result) instead.")
+            }
+            
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 1.0)
+    }
+    
+    func test_load_deliversFallbackOnPrimaryFailure() {
+        let fallbackLessons = uniqueLessons()
+        let sut = makeSUT(primaryResult: .failure(anyNSError()), fallbackResult: .success(fallbackLessons))
+        
+        let exp = expectation(description: "Wait for load completion")
+        sut.getLessons { result in
+            switch result {
+            case .success(let receivedLessons):
+                XCTAssertEqual(receivedLessons, fallbackLessons)
                 
             case .failure:
                 XCTFail("Expected successful load lessons result, got \(result) instead.")
@@ -59,6 +88,10 @@ class LessonServiceWithLocakFallbackCompositeTests: XCTestCase {
         return [
             Lesson(id: 1, name: "any name", description: "any description", thumbnail: URL(string: "http://any-image-url.com")!, videoUrl: URL(string: "http://any-video-url.com")!)
         ]
+    }
+    
+    private func anyNSError() -> NSError {
+        return NSError(domain: "any error", code: 0)
     }
     
     private class LoaderStub: LessonService {
