@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C2D241C281B18EC00C33057 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D241B281B18EC00C33057 /* ProgressBarView.swift */; };
+		4C2D241F281B1CD900C33057 /* RemoteVideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D241E281B1CD900C33057 /* RemoteVideoService.swift */; };
+		4C2D2421281B238600C33057 /* VideoDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D2420281B238600C33057 /* VideoDataService.swift */; };
+		4C2D2423281B26BE00C33057 /* LessonVideoServiceCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D2422281B26BE00C33057 /* LessonVideoServiceCacheDecorator.swift */; };
+		4C2D2425281B278400C33057 /* VideoDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D2424281B278400C33057 /* VideoDataStore.swift */; };
+		4C2D2427281B27F200C33057 /* CoreDataLessonStore+VideoDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D2426281B27F200C33057 /* CoreDataLessonStore+VideoDataStore.swift */; };
+		4C2D2429281B293A00C33057 /* LocaleVideoDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D2428281B293A00C33057 /* LocaleVideoDataService.swift */; };
+		4C2D242B281B2D1C00C33057 /* LessonVideoDataServiceWithFallbackComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D242A281B2D1C00C33057 /* LessonVideoDataServiceWithFallbackComposite.swift */; };
 		4C7599B52816FFD600957666 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7599B42816FFD600957666 /* Lesson.swift */; };
 		4C7599B8281700C400957666 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7599B7281700C400957666 /* URLSessionHTTPClient.swift */; };
 		4C7599BB2817024000957666 /* LessonEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7599BA2817024000957666 /* LessonEndpoint.swift */; };
@@ -65,6 +73,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C2D241B281B18EC00C33057 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
+		4C2D241E281B1CD900C33057 /* RemoteVideoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteVideoService.swift; sourceTree = "<group>"; };
+		4C2D2420281B238600C33057 /* VideoDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDataService.swift; sourceTree = "<group>"; };
+		4C2D2422281B26BE00C33057 /* LessonVideoServiceCacheDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonVideoServiceCacheDecorator.swift; sourceTree = "<group>"; };
+		4C2D2424281B278400C33057 /* VideoDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDataStore.swift; sourceTree = "<group>"; };
+		4C2D2426281B27F200C33057 /* CoreDataLessonStore+VideoDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataLessonStore+VideoDataStore.swift"; sourceTree = "<group>"; };
+		4C2D2428281B293A00C33057 /* LocaleVideoDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleVideoDataService.swift; sourceTree = "<group>"; };
+		4C2D242A281B2D1C00C33057 /* LessonVideoDataServiceWithFallbackComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonVideoDataServiceWithFallbackComposite.swift; sourceTree = "<group>"; };
 		4C7599B42816FFD600957666 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		4C7599B7281700C400957666 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		4C7599BA2817024000957666 /* LessonEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonEndpoint.swift; sourceTree = "<group>"; };
@@ -140,6 +156,7 @@
 				4C7599B42816FFD600957666 /* Lesson.swift */,
 				4C98A1CE2819A22100FDB648 /* LessonSerivce.swift */,
 				4C98A1D02819A23600FDB648 /* LessonImageDataService.swift */,
+				4C2D2420281B238600C33057 /* VideoDataService.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -157,8 +174,9 @@
 			children = (
 				4C7599BA2817024000957666 /* LessonEndpoint.swift */,
 				4C7599BC281702C900957666 /* RemoteLessonsService.swift */,
-				4C7599BE2817040600957666 /* LessonMapper.swift */,
 				4C98A1D52819ADF500FDB648 /* RemoteImageDataService.swift */,
+				4C2D241E281B1CD900C33057 /* RemoteVideoService.swift */,
+				4C7599BE2817040600957666 /* LessonMapper.swift */,
 			);
 			path = "Lesson API";
 			sourceTree = "<group>";
@@ -169,8 +187,10 @@
 				4C7599C82817162600957666 /* Infrastructure */,
 				4C7599CF281721B700957666 /* LocalLessonService.swift */,
 				4C98A1D72819B5F300FDB648 /* LocaleImageDataService.swift */,
+				4C2D2428281B293A00C33057 /* LocaleVideoDataService.swift */,
 				4C98A1D92819B63B00FDB648 /* ImadeDataStore.swift */,
 				4C7599D1281721DB00957666 /* LessonStore.swift */,
+				4C2D2424281B278400C33057 /* VideoDataStore.swift */,
 			);
 			path = "Lesson Cache";
 			sourceTree = "<group>";
@@ -183,6 +203,7 @@
 				4C7599CD281719AF00957666 /* ManagedLesson.swift */,
 				4C7599D3281724E700957666 /* CoreDataLessonStore+LessonStore.swift */,
 				4C98A1DB2819B8B200FDB648 /* CoreDataLessonStore+ImadeDataStore.swift */,
+				4C2D2426281B27F200C33057 /* CoreDataLessonStore+VideoDataStore.swift */,
 				4C7599C4281713F000957666 /* LessonStore.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -236,8 +257,10 @@
 				4CEA928A2816FE990058BB84 /* SceneDelegate.swift */,
 				4C98A1E02819D6FB00FDB648 /* LessonServiceWithFallbackComposite.swift */,
 				4C98A1E22819D76000FDB648 /* LessonImageDataServiceWithFallbackComposite.swift */,
+				4C2D242A281B2D1C00C33057 /* LessonVideoDataServiceWithFallbackComposite.swift */,
 				4C98A1E52819DE7100FDB648 /* LessonServiceCacheDecorator.swift */,
 				4C98A1E72819E1E900FDB648 /* LessonImageeServiceCacheDecorator.swift */,
+				4C2D2422281B26BE00C33057 /* LessonVideoServiceCacheDecorator.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -329,6 +352,7 @@
 			children = (
 				4CF1BEFA28185683001BA726 /* LessonDetailView.swift */,
 				4CF1BEFC281880F4001BA726 /* VideoView.swift */,
+				4C2D241B281B18EC00C33057 /* ProgressBarView.swift */,
 			);
 			path = "SwiftUI Views";
 			sourceTree = "<group>";
@@ -472,9 +496,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C2D2423281B26BE00C33057 /* LessonVideoServiceCacheDecorator.swift in Sources */,
 				4CF1BEF328184284001BA726 /* UIView+Ext.swift in Sources */,
 				4C98A1D12819A23600FDB648 /* LessonImageDataService.swift in Sources */,
 				4CF1BEFB28185683001BA726 /* LessonDetailView.swift in Sources */,
+				4C2D2427281B27F200C33057 /* CoreDataLessonStore+VideoDataStore.swift in Sources */,
 				4CEA92892816FE990058BB84 /* AppDelegate.swift in Sources */,
 				4C7599C6281713F000957666 /* LessonStore.xcdatamodeld in Sources */,
 				4C98A1E32819D76000FDB648 /* LessonImageDataServiceWithFallbackComposite.swift in Sources */,
@@ -487,17 +513,23 @@
 				4C98A1DC2819B8B200FDB648 /* CoreDataLessonStore+ImadeDataStore.swift in Sources */,
 				4C7599D0281721B700957666 /* LocalLessonService.swift in Sources */,
 				4C98A1CD28199A0E00FDB648 /* Alertable.swift in Sources */,
+				4C2D2421281B238600C33057 /* VideoDataService.swift in Sources */,
 				4C98A1DA2819B63B00FDB648 /* ImadeDataStore.swift in Sources */,
+				4C2D241C281B18EC00C33057 /* ProgressBarView.swift in Sources */,
 				4C98A1D82819B5F300FDB648 /* LocaleImageDataService.swift in Sources */,
 				4CF1BEF528184DAC001BA726 /* UIColor+Ext.swift in Sources */,
 				4C7599B52816FFD600957666 /* Lesson.swift in Sources */,
 				4CF1BEF02818396D001BA726 /* LessonsListViewController.swift in Sources */,
+				4C2D2429281B293A00C33057 /* LocaleVideoDataService.swift in Sources */,
+				4C2D241F281B1CD900C33057 /* RemoteVideoService.swift in Sources */,
 				4C98A1E12819D6FB00FDB648 /* LessonServiceWithFallbackComposite.swift in Sources */,
+				4C2D2425281B278400C33057 /* VideoDataStore.swift in Sources */,
 				4C7599D4281724E700957666 /* CoreDataLessonStore+LessonStore.swift in Sources */,
 				4C7599CC2817177B00957666 /* CoreDataLessonStore.swift in Sources */,
 				4C98A1D42819A82500FDB648 /* LessonListViewModel.swift in Sources */,
 				4C98A1D62819ADF500FDB648 /* RemoteImageDataService.swift in Sources */,
 				4C7599BF2817040600957666 /* LessonMapper.swift in Sources */,
+				4C2D242B281B2D1C00C33057 /* LessonVideoDataServiceWithFallbackComposite.swift in Sources */,
 				4C7599BD281702C900957666 /* RemoteLessonsService.swift in Sources */,
 				4C7599CA2817165700957666 /* CoreDataHelpers.swift in Sources */,
 				4CF1BEFD281880F4001BA726 /* VideoView.swift in Sources */,

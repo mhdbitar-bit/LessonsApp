@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-class LessonDetailViewObservable: ObservableObject {
-    @Published var lesson: Lesson!
-    @Published var image: UIImage!
-    var nextLessonAction: (() -> Void)!
-}
-
 struct LessonDetailView: View {
     
     @State private var presentingVidewView = false
@@ -20,6 +14,7 @@ struct LessonDetailView: View {
     var image: UIImage
     
     var nextLessonAction: (() -> Void)?
+    var downloadVideoAction: (() -> Void)?
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -80,7 +75,7 @@ struct LessonDetailView: View {
             VideoView(videoURL: lesson.videoUrl)
         }
         .navigationBarItems(trailing: Button(action: {
-            print("test")
+            downloadVideoAction?()
         }, label: {
             HStack {
                 Image(systemName: "icloud.and.arrow.down")

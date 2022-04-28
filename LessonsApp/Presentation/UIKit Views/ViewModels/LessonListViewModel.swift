@@ -12,15 +12,17 @@ final class LessonListViewModel {
     
     let lessonService: LessonService
     let imageDataService: LessonImageDataService
+    let videoDataService: VideoDataService
     
     let title = "Lessons"
     @Published var lessons: [Lesson] = []
     @Published var isLoading: Bool = false
     @Published var error: String? = nil
     
-    init(lessonService: LessonService, imageDataService: LessonImageDataService) {
+    init(lessonService: LessonService, imageDataService: LessonImageDataService, videoDataService: VideoDataService) {
         self.lessonService = lessonService
         self.imageDataService = imageDataService
+        self.videoDataService = videoDataService
     }
     
     func loadLessons() {

@@ -22,7 +22,7 @@ final class LessonsListViewController: UITableViewController, Alertable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         navigationItem.title = "Lessons"
         view.backgroundColor = .backgroundColor
         setupNavigation()
@@ -48,7 +48,7 @@ final class LessonsListViewController: UITableViewController, Alertable {
         appearance.backgroundColor = .backgroundColor
         appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-
+        
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
@@ -128,7 +128,7 @@ extension LessonsListViewController {
         cell.configure(with: lesson, imageService: viewModel.imageDataService)
         return cell
     }
-        
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
@@ -142,6 +142,10 @@ extension LessonsListViewController {
                 nextLessonAction: { [weak self] in
                     guard let self = self else { return }
                     self.selectNextLesson(at: indexPath.row + 1)
+                },
+                downloadVideoAction: { [weak self] in
+                    guard let self = self else { return }
+                    self.viewModel.videoDataService.loadVideo(from: lesson.videoUrl) { _ in }
                 })
             )
             show(vc, sender: self)

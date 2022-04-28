@@ -29,6 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let client = URLSessionHTTPClient(session: session)
         let remoteLessonService = RemoteLessonsService(url: url, client: client)
         let remoteImageService = RemoteImageDataService(client: client)
+        let remoteVideoService = RemoteVideoService(client: client)
         
         let localStoreURL = NSPersistentContainer
             .defaultDirectoryURL()
@@ -37,6 +38,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let localStore = try! CoreDataLessonStore(storeURL: localStoreURL)
         let localLessonsService = LocalLessonService(store: localStore)
         let localImageService = LocaleImageDataService(store: localStore)
+        let localVideoService = LocaleVideoDataService(store: localStore)
         
         let viewModel = LessonListViewModel(
             lessonService: LessonServiceWithFallbackComposite(
@@ -52,7 +54,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     decoratee: remoteImageService,
                     cache: localImageService
                 )
-            )
+            ),
+            videoDataService: LessonVideoDataServiceWithFallbackComposite(
+                primary: localVideoService,
+                fallback: LessonVideoServiceCacheDecorator(
+                    decoratee: remoteVideoService,
+                    cache: localVideoService))
         )
         let vc = LessonsListViewController(viewModel: viewModel)
         return vc
