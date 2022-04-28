@@ -69,7 +69,7 @@ struct LessonDetailView: View {
         }
         .background(Color("BackgroundColor"))
         .sheet(isPresented: $presentingVidewView) {
-            VideoView()
+            VideoView(videoURL: lesson.videoUrl)
         }
         .navigationBarItems(trailing: Button(action: {
             print("test")

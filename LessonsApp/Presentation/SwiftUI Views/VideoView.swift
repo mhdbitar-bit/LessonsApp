@@ -9,10 +9,10 @@ import SwiftUI
 import AVKit
 
 struct VideoView: View {
-    //    @Binding var presentedVidewView: Bool = false
+    var videoURL: URL
     
     var body: some View {
-        VideoPlayer(player: AVPlayer(url:  URL(string: "https://embed-ssl.wistia.com/deliveries/79b349f5446e0bdd0312cea421245c81ae743aee/bjx305gqt5.mp4")!))
+        VideoPlayer(player: AVPlayer(url: videoURL))
             .onAppear {
                 AppDelegate.orientationLock = UIInterfaceOrientationMask.landscapeLeft
                         UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue, forKey: "orientation")
@@ -25,12 +25,5 @@ struct VideoView: View {
                 }
             }
             .ignoresSafeArea()
-    }
-}
-
-struct VideoView_Previews: PreviewProvider {
-    static var previews: some View {
-        VideoView()
-        
     }
 }
