@@ -1,5 +1,5 @@
 //
-//  LessonServiceWithLocakFallbackComposite.swift
+//  LessonServiceWithFallbackComposite.swift
 //  LessonsApp
 //
 //  Created by Mohammad Bitar on 4/27/22.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LessonServiceWithLocakFallbackComposite: LessonService {
+class LessonServiceWithFallbackComposite: LessonService {
     private let primary: LessonService
     private let fallback: LessonService
     

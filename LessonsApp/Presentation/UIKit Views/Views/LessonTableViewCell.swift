@@ -10,7 +10,7 @@ import UIKit
 final class LessonTableViewCell: UITableViewCell {
     static let identifier = "LessonTableViewCell"
     
-    private let lessonImage: UIImageView = {
+    let lessonImage: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "test"))
         imageView.contentMode = .scaleToFill
         imageView.layer.borderWidth = 1
@@ -20,13 +20,15 @@ final class LessonTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    private  let lessonNameLabel: UILabel = {
+    private let lessonNameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
         label.textAlignment = .left
         label.numberOfLines = 0
         return label
     }()
+    
+    var imageData: Data?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -77,7 +79,10 @@ final class LessonTableViewCell: UITableViewCell {
             guard let self = self else { return }
             switch result {
             case .success(let data):
-                self.lessonImage.image = UIImage(data: data)
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    self.lessonImage.image = UIImage(data: data)
+                }
             case .failure:
                 // TODO Add retry button
                 break

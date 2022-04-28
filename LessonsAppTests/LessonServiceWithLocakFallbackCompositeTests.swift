@@ -33,7 +33,7 @@ class LessonServiceWithLocakFallbackCompositeTests: XCTestCase {
     private func makeSUT(primaryResult: LessonService.Result, fallbackResult: LessonService.Result, file: StaticString = #file, line: UInt = #line) -> LessonService {
         let primaryService = LoaderStub(result: primaryResult)
         let fallbackService = LoaderStub(result: fallbackResult)
-        let sut = LessonServiceWithLocakFallbackComposite(primary: primaryService, fallback: fallbackService)
+        let sut = LessonServiceWithFallbackComposite(primary: primaryService, fallback: fallbackService)
         trackForMemoryLeaks(primaryService, file: file, line: line)
         trackForMemoryLeaks(fallbackService, file: file, line: line)
         trackForMemoryLeaks(sut, file: file, line: line)

@@ -134,8 +134,13 @@ extension LessonsListViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = UIHostingController(rootView: LessonDetailView())
-        
-        show(vc, sender: self)
+        if let cell = tableView.cellForRow(at: indexPath) as? LessonTableViewCell {
+            let lesson = lessons[indexPath.row]
+            let vc = UIHostingController(rootView: LessonDetailView(
+                lesson: lesson,
+                image: (cell.lessonImage.image ?? UIImage(named: "test"))!
+            ))
+            show(vc, sender: self)
+        }
     }
 }

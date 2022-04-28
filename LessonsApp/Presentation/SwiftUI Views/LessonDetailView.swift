@@ -10,12 +10,14 @@ import SwiftUI
 struct LessonDetailView: View {
     
     @State var presentingVidewView = false
+    var lesson: Lesson
+    var image: UIImage
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .center, spacing: 30) {
                 ZStack {
-                    Image("test")
+                    Image(uiImage: image)
                         .resizable()
                         .renderingMode(.original)
                         .aspectRatio(contentMode: .fill)
@@ -36,13 +38,13 @@ struct LessonDetailView: View {
                     }
                 }
                 
-                Text("How To Capture Unique iPhone Street Photography")
+                Text(lesson.name)
                     .foregroundColor(Color.white)
                     .font(.title)
                     .fontWeight(.bold)
                     .padding(.horizontal)
                 
-                Text("Street photography allows you to capture really interesting photos… Photos that tell unique stories of strangers. Of course, it can be scary to get started with street photography. After all, you’re taking photos of people you don’t know... But honestly, you have nothing to worry about. And once you get started, it can become quite addictive!")
+                Text(lesson.description)
                     .fontWeight(.regular)
                     .foregroundColor(Color.white)
                     .font(.body)
@@ -85,11 +87,5 @@ struct LessonDetailView: View {
     
     private func openVideo() {
         self.presentingVidewView = true
-    }
-}
-
-struct LessonDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        LessonDetailView()
     }
 }

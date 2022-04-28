@@ -39,7 +39,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let localImageService = LocaleImageDataService(store: localStore)
         
         let viewModel = LessonListViewModel(
-            lessonService: LessonServiceWithLocakFallbackComposite(
+            lessonService: LessonServiceWithFallbackComposite(
                 primary:  LessonServiceCacheDecorator(
                     decoratee: remoteLessonService,
                     cache: localLessonsService

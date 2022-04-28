@@ -9,8 +9,8 @@ import Foundation
 
 struct Lesson: Equatable {
     let id: Int
-    let name: String
-    let description: String
+    var name: String
+    var description: String
     let thumbnail: URL
     let videoUrl: URL
 }

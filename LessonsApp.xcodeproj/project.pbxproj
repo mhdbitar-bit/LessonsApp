@@ -28,7 +28,7 @@
 		4C98A1DA2819B63B00FDB648 /* ImadeDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C98A1D92819B63B00FDB648 /* ImadeDataStore.swift */; };
 		4C98A1DC2819B8B200FDB648 /* CoreDataLessonStore+ImadeDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C98A1DB2819B8B200FDB648 /* CoreDataLessonStore+ImadeDataStore.swift */; };
 		4C98A1DF2819D37700FDB648 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C98A1DE2819D37700FDB648 /* XCTestCase+MemoryLeakTracking.swift */; };
-		4C98A1E12819D6FB00FDB648 /* LessonServiceWithLocakFallbackComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C98A1E02819D6FB00FDB648 /* LessonServiceWithLocakFallbackComposite.swift */; };
+		4C98A1E12819D6FB00FDB648 /* LessonServiceWithFallbackComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C98A1E02819D6FB00FDB648 /* LessonServiceWithFallbackComposite.swift */; };
 		4C98A1E32819D76000FDB648 /* LessonImageDataServiceWithFallbackComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C98A1E22819D76000FDB648 /* LessonImageDataServiceWithFallbackComposite.swift */; };
 		4C98A1E62819DE7100FDB648 /* LessonServiceCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C98A1E52819DE7100FDB648 /* LessonServiceCacheDecorator.swift */; };
 		4C98A1E82819E1E900FDB648 /* LessonImageeServiceCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C98A1E72819E1E900FDB648 /* LessonImageeServiceCacheDecorator.swift */; };
@@ -86,7 +86,7 @@
 		4C98A1D92819B63B00FDB648 /* ImadeDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImadeDataStore.swift; sourceTree = "<group>"; };
 		4C98A1DB2819B8B200FDB648 /* CoreDataLessonStore+ImadeDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataLessonStore+ImadeDataStore.swift"; sourceTree = "<group>"; };
 		4C98A1DE2819D37700FDB648 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
-		4C98A1E02819D6FB00FDB648 /* LessonServiceWithLocakFallbackComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonServiceWithLocakFallbackComposite.swift; sourceTree = "<group>"; };
+		4C98A1E02819D6FB00FDB648 /* LessonServiceWithFallbackComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonServiceWithFallbackComposite.swift; sourceTree = "<group>"; };
 		4C98A1E22819D76000FDB648 /* LessonImageDataServiceWithFallbackComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonImageDataServiceWithFallbackComposite.swift; sourceTree = "<group>"; };
 		4C98A1E52819DE7100FDB648 /* LessonServiceCacheDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonServiceCacheDecorator.swift; sourceTree = "<group>"; };
 		4C98A1E72819E1E900FDB648 /* LessonImageeServiceCacheDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonImageeServiceCacheDecorator.swift; sourceTree = "<group>"; };
@@ -234,7 +234,7 @@
 			children = (
 				4CEA92882816FE990058BB84 /* AppDelegate.swift */,
 				4CEA928A2816FE990058BB84 /* SceneDelegate.swift */,
-				4C98A1E02819D6FB00FDB648 /* LessonServiceWithLocakFallbackComposite.swift */,
+				4C98A1E02819D6FB00FDB648 /* LessonServiceWithFallbackComposite.swift */,
 				4C98A1E22819D76000FDB648 /* LessonImageDataServiceWithFallbackComposite.swift */,
 				4C98A1E52819DE7100FDB648 /* LessonServiceCacheDecorator.swift */,
 				4C98A1E72819E1E900FDB648 /* LessonImageeServiceCacheDecorator.swift */,
@@ -492,7 +492,7 @@
 				4CF1BEF528184DAC001BA726 /* UIColor+Ext.swift in Sources */,
 				4C7599B52816FFD600957666 /* Lesson.swift in Sources */,
 				4CF1BEF02818396D001BA726 /* LessonsListViewController.swift in Sources */,
-				4C98A1E12819D6FB00FDB648 /* LessonServiceWithLocakFallbackComposite.swift in Sources */,
+				4C98A1E12819D6FB00FDB648 /* LessonServiceWithFallbackComposite.swift in Sources */,
 				4C7599D4281724E700957666 /* CoreDataLessonStore+LessonStore.swift in Sources */,
 				4C7599CC2817177B00957666 /* CoreDataLessonStore.swift in Sources */,
 				4C98A1D42819A82500FDB648 /* LessonListViewModel.swift in Sources */,
