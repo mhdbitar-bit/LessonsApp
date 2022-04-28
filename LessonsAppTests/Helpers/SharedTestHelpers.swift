@@ -36,8 +36,8 @@ func makeLesson(id: Int, name: String, description: String, thumbnail: URL, vide
         "id": id,
         "name": name,
         "description": description,
-        "thumbnail": thumbnail,
-        "videoUrl": videoUrl
+        "thumbnail": thumbnail.absoluteString,
+        "video_url": videoUrl.absoluteString
     ] as [String : Any]
     
     return (lesson, json)

@@ -18,6 +18,7 @@
 		4C2D242F281B302700C33057 /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D242E281B302700C33057 /* SharedTestHelpers.swift */; };
 		4C2D2431281B31C500C33057 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D2430281B31C500C33057 /* URLProtocolStub.swift */; };
 		4C2D2433281B31F000C33057 /* LessonServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D2432281B31F000C33057 /* LessonServiceTests.swift */; };
+		4C2D2435281B327800C33057 /* LessonMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D2434281B327800C33057 /* LessonMapperTests.swift */; };
 		4C7599B52816FFD600957666 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7599B42816FFD600957666 /* Lesson.swift */; };
 		4C7599B8281700C400957666 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7599B7281700C400957666 /* URLSessionHTTPClient.swift */; };
 		4C7599BB2817024000957666 /* LessonEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7599BA2817024000957666 /* LessonEndpoint.swift */; };
@@ -78,6 +79,7 @@
 		4C2D242E281B302700C33057 /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 		4C2D2430281B31C500C33057 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
 		4C2D2432281B31F000C33057 /* LessonServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonServiceTests.swift; sourceTree = "<group>"; };
+		4C2D2434281B327800C33057 /* LessonMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonMapperTests.swift; sourceTree = "<group>"; };
 		4C7599B42816FFD600957666 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		4C7599B7281700C400957666 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		4C7599BA2817024000957666 /* LessonEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonEndpoint.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				4C98A1DD2819D36C00FDB648 /* Helpers */,
 				4CEA929F2816FE9A0058BB84 /* LessonServiceWithLocakFallbackCompositeTests.swift */,
 				4C2D2432281B31F000C33057 /* LessonServiceTests.swift */,
+				4C2D2434281B327800C33057 /* LessonMapperTests.swift */,
 			);
 			path = LessonsAppTests;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 			files = (
 				4C2D242F281B302700C33057 /* SharedTestHelpers.swift in Sources */,
 				4C2D2433281B31F000C33057 /* LessonServiceTests.swift in Sources */,
+				4C2D2435281B327800C33057 /* LessonMapperTests.swift in Sources */,
 				4CEA92A02816FE9A0058BB84 /* LessonServiceWithLocakFallbackCompositeTests.swift in Sources */,
 				4C98A1DF2819D37700FDB648 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				4C2D2431281B31C500C33057 /* URLProtocolStub.swift in Sources */,
