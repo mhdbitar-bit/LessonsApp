@@ -7,11 +7,19 @@
 
 import SwiftUI
 
+class LessonDetailViewObservable: ObservableObject {
+    @Published var lesson: Lesson!
+    @Published var image: UIImage!
+    var nextLessonAction: (() -> Void)!
+}
+
 struct LessonDetailView: View {
     
-    @State var presentingVidewView = false
+    @State private var presentingVidewView = false
     var lesson: Lesson
     var image: UIImage
+    
+    var nextLessonAction: (() -> Void)?
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -51,7 +59,7 @@ struct LessonDetailView: View {
                     .padding(.horizontal)
                 
                 Button {
-                    print("TEst")
+                    nextLessonAction?()
                 } label: {
                     HStack {
                         Spacer()

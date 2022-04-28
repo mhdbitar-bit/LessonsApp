@@ -138,9 +138,19 @@ extension LessonsListViewController {
             let lesson = lessons[indexPath.row]
             let vc = UIHostingController(rootView: LessonDetailView(
                 lesson: lesson,
-                image: (cell.lessonImage.image ?? UIImage(named: "test"))!
-            ))
+                image: (cell.lessonImage.image ?? UIImage(named: "test"))!,
+                nextLessonAction: { [weak self] in
+                    guard let self = self else { return }
+                    self.selectNextLesson(at: indexPath.row + 1)
+                })
+            )
             show(vc, sender: self)
         }
+    }
+    
+    private func selectNextLesson(at index: Int) {
+        let indexPath = IndexPath(row: index, section: 0)
+        self.tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        self.tableView.delegate?.tableView?(self.tableView, didSelectRowAt: indexPath)
     }
 }
